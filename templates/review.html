@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabz - Confirmation Request</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@250;300;400;500;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <img src="/static/images/logo.svg" alt="Tabz" class="header__logo">
+    <a href="#" class="header__link">
+      <span class="header__link-desktop">Download App</span>
+      <span class="header__link-mobile">Open App</span>
+    </a>
+  </header>
+
+  <main class="card-container">
+    <div class="review-card">
+      <div class="review-left">
+        <div class="profile">
+          <img src="/static/images/profile.png" alt="Arif Momin" class="profile__photo">
+          <h2 class="profile__name">Arif Momin</h2>
+          <p class="profile__subtitle">would like you to confirm:</p>
+        </div>
+
+        <div class="amount">
+          <div class="amount__label">
+            <img src="/static/icons/diamond-icon.svg" alt="" class="diamond-icon">
+            <span>You Received</span>
+          </div>
+          <div class="amount__value">
+            <span class="currency">$</span>
+            <span class="number">60</span>
+            <span class="cents">,00</span>
+          </div>
+          <span class="amount__type">In Goods</span>
+        </div>
+
+        <div class="actions actions--desktop">
+          <a href="/accepted" class="btn btn--confirm">I Confirm This Exchange</a>
+          <a href="/denied" class="btn btn--decline">This Exchange Did Not Happen</a>
+        </div>
+      </div>
+
+      <div class="review-right">
+        <div class="details">
+          <h3 class="details__title">Details</h3>
+          <div class="details__quote">
+            <span class="details__quote-mark">&ldquo;</span>
+            <p class="details__quote-text">Donec ultricies arcu quis nisl pellentesque, quis lobortis augue. Donec ultricies arcu quis nisl pellentesque, quis lobortis augue. Donec ultricies arcu quis nisl pellentesque, quis lobortis augue.</p>
+          </div>
+          <img src="/static/images/receipt.png" alt="Receipt" class="details__image">
+        </div>
+      </div>
+    </div>
+
+    <div class="review-fade"></div>
+
+    <div class="actions actions--mobile">
+      <a href="/accepted" class="btn btn--confirm">I Confirm This Exchange</a>
+      <a href="/denied" class="btn btn--decline">This Exchange Did Not Happen</a>
+    </div>
+  </main>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

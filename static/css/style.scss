@@ -1,0 +1,637 @@
+// ========================================
+// Tabz - Confirmation Request Pages
+// ========================================
+
+// Variables
+$bg-color: #F5F8FF;
+$white: #ffffff;
+$text-primary: #4D4D4D;
+$text-secondary: #828D99;
+$accent: #00C5AD;
+$gradient-start: #00CDAC;
+$gradient-end: #02AAB0;
+$decline-color: #F15858;
+$border-color: #E5EDFF;
+
+$font-heading: 'Oswald', sans-serif;
+$font-body: 'Poppins', sans-serif;
+
+$card-shadow: 0px 1.55px 2.75px rgba(0, 29, 98, 0.01),
+              0px 3.91px 6.95px rgba(0, 29, 98, 0.01),
+              0px 7.97px 14.18px rgba(0, 29, 98, 0.02),
+              0px 16.43px 29.20px rgba(0, 29, 98, 0.02),
+              0px 45px 80px rgba(0, 29, 98, 0.03);
+
+$btn-primary-shadow: 0px 0.84px 1.59px rgba(0, 205, 172, 0.03),
+                     0px 1.90px 3.62px rgba(0, 205, 172, 0.05),
+                     0px 3.31px 6.31px rgba(0, 205, 172, 0.06),
+                     0px 5.26px 10.02px rgba(0, 205, 172, 0.06),
+                     0px 8.11px 15.46px rgba(0, 205, 172, 0.07),
+                     0px 12.66px 24.12px rgba(0, 205, 172, 0.08),
+                     0px 21.02px 40.04px rgba(0, 205, 172, 0.10),
+                     0px 42px 80px rgba(0, 205, 172, 0.13);
+
+$btn-decline-shadow: 0px 2.77px 2.21px rgba(241, 88, 88, 0.02),
+                     0px 6.65px 5.32px rgba(241, 88, 88, 0.03),
+                     0px 12.52px 10.02px rgba(241, 88, 88, 0.04),
+                     0px 22.34px 17.87px rgba(241, 88, 88, 0.04),
+                     0px 41.78px 33.42px rgba(241, 88, 88, 0.05),
+                     0px 100px 80px rgba(241, 88, 88, 0.07);
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $bg-color;
+  font-family: $font-body;
+  min-height: 100vh;
+}
+
+// ========================================
+// Header
+// ========================================
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 42px 44px;
+
+  &__logo {
+    width: 59px;
+    height: 59px;
+    border-radius: 15px;
+    box-shadow: $btn-primary-shadow;
+  }
+
+  &__link {
+    color: $accent;
+    font-family: $font-heading;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__link-mobile {
+    display: none;
+  }
+
+  &__link-desktop {
+    display: inline;
+  }
+}
+
+// ========================================
+// Card Container
+// ========================================
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+// ========================================
+// Review Page
+// ========================================
+.review-card {
+  display: flex;
+  box-shadow: $card-shadow;
+  border-radius: 20px;
+  overflow: visible;
+  max-width: 900px;
+  width: 100%;
+}
+
+.review-left {
+  background: $white;
+  padding: 48px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  border-right: 1px solid $border-color;
+  border-radius: 20px 0 0 20px;
+  flex: 1;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+
+  &__photo {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    box-shadow: $card-shadow;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  &__name {
+    color: $text-primary;
+    font-family: $font-heading;
+    font-size: 22px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 10px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $text-secondary;
+    font-family: $font-body;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    width: 275px;
+  }
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    .diamond-icon {
+      width: 18px;
+      height: 19px;
+    }
+
+    span {
+      color: $text-primary;
+      font-family: $font-heading;
+      font-size: 16px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+
+  &__value {
+    display: flex;
+    align-items: flex-start;
+
+    .currency {
+      color: $text-primary;
+      font-family: $font-heading;
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 31.81px;
+      margin-top: 20px;
+    }
+
+    .number {
+      color: $text-primary;
+      font-family: $font-heading;
+      font-size: 90px;
+      font-weight: 500;
+      line-height: 65.07px;
+    }
+
+    .cents {
+      color: $text-primary;
+      font-family: $font-heading;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 17.35px;
+      margin-top: 5px;
+    }
+  }
+
+  &__type {
+    color: $text-primary;
+    font-family: $font-heading;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+// Buttons
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 335px;
+}
+
+.actions--mobile {
+  display: none;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 335px;
+  height: 65px;
+  border: none;
+  border-radius: 33px;
+  cursor: pointer;
+  color: $white;
+  font-family: $font-heading;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 22px;
+
+  &--confirm {
+    background: linear-gradient(135deg, $gradient-start 0%, $gradient-end 100%);
+    box-shadow: $btn-primary-shadow;
+  }
+
+  &--decline {
+    background: $decline-color;
+    box-shadow: $btn-decline-shadow;
+  }
+}
+
+// Details panel (desktop: right side)
+.review-right {
+  background: $white;
+  padding: 88px 60px 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-radius: 0 20px 20px 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+
+  &__title {
+    color: $text-secondary;
+    font-family: $font-heading;
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 10px;
+    order: 1;
+  }
+
+  &__image {
+    width: 210px;
+    height: 210px;
+    border-radius: 20px;
+    box-shadow: $card-shadow;
+    object-fit: cover;
+    order: 2;
+  }
+
+  &__quote {
+    display: flex;
+    gap: 2px;
+    max-width: 210px;
+    order: 3;
+  }
+
+  &__quote-mark {
+    color: $text-primary;
+    font-family: $font-heading;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    flex-shrink: 0;
+    width: 10px;
+  }
+
+  &__quote-text {
+    color: $text-primary;
+    font-family: $font-body;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+
+// Desktop: hide fade overlay
+.review-fade {
+  display: none;
+}
+
+// ========================================
+// Result Pages (Accepted / Denied)
+// ========================================
+.result-card {
+  display: flex;
+  box-shadow: $card-shadow;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+.result-status {
+  background: $white;
+  padding: 32px 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 456px;
+  min-height: 563px;
+  flex-shrink: 0;
+}
+
+.status-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.status-text {
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 10px;
+  text-align: center;
+
+  &--accepted {
+    color: $accent;
+  }
+
+  &--denied {
+    color: $decline-color;
+  }
+}
+
+.discover-card {
+  background: linear-gradient(180deg, $gradient-start 0%, $gradient-end 100%);
+  box-shadow: $btn-primary-shadow;
+  padding: 68px 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-height: 564px;
+
+  &__bg {
+    position: absolute;
+    top: -164px;
+    left: -138px;
+    width: 585px;
+    height: 730px;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    width: 299px;
+  }
+
+  &__icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  &__title {
+    color: $white;
+    font-family: $font-heading;
+    font-size: 40px;
+    font-weight: 250;
+    text-transform: uppercase;
+    text-align: center;
+    width: 241px;
+  }
+
+  &__text {
+    color: $white;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    width: 431px;
+    line-height: 1.6;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 197px;
+    height: 54px;
+    background: $white;
+    border-radius: 20px;
+    box-shadow: $card-shadow, 0px -1px 40px rgba(0, 29, 98, 0.04);
+    color: $accent;
+    font-family: $font-heading;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    line-height: 22px;
+  }
+}
+
+// ========================================
+// Mobile (max-width: 768px)
+// ========================================
+@media (max-width: 768px) {
+
+  // Header
+  .header {
+    padding: 55px 27px 0;
+
+    &__logo {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__link-mobile {
+      display: inline;
+    }
+
+    &__link-desktop {
+      display: none;
+    }
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    padding: 0;
+  }
+
+  // ---- Review Mobile ----
+  .review-card {
+    flex-direction: column;
+    width: 321px;
+    border-radius: 20px;
+    overflow: visible;
+  }
+
+  .review-left {
+    padding: 48px 24px 32px;
+    gap: 12px;
+    border-right: none;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .profile {
+    &__photo {
+      width: 54px;
+      height: 54px;
+      margin-top: -75px;
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  .amount {
+    gap: 12px;
+
+    &__value {
+      .currency {
+        font-size: 44px;
+        margin-top: 20px;
+      }
+
+      .number {
+        font-size: 70px;
+        font-weight: 400;
+        line-height: 50.61px;
+      }
+
+      .cents {
+        margin-top: 3px;
+      }
+    }
+
+    &__type {
+      font-size: 14px;
+    }
+  }
+
+  // Desktop actions hidden on mobile
+  .actions--desktop {
+    display: none;
+  }
+
+  // Mobile actions shown
+  .actions--mobile {
+    display: flex;
+    width: 335px;
+    z-index: 3;
+    margin-top: -80px;
+  }
+
+  .review-right {
+    padding: 24px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .details {
+    align-items: center;
+
+    &__title {
+      display: none;
+    }
+
+    &__quote {
+      max-width: 210px;
+      order: 1;
+    }
+
+    &__image {
+      order: 2;
+    }
+  }
+
+  // Fade overlay
+  .review-fade {
+    display: block;
+    width: 375px;
+    height: 236px;
+    background: linear-gradient(180deg, rgba(245, 248, 255, 0) 0%, $bg-color 100%);
+    margin-top: -100px;
+    z-index: 2;
+  }
+
+  // ---- Result Mobile ----
+  .result-card {
+    flex-direction: column;
+    width: 321px;
+    border-radius: 20px;
+  }
+
+  .result-status {
+    padding: 32px 88px;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .discover-card {
+    padding: 52px 35px;
+    min-height: 404px;
+    align-items: flex-start;
+
+    &__bg {
+      width: 651px;
+      height: 812px;
+      top: 0;
+      left: -138px;
+    }
+
+    &__content {
+      align-items: flex-start;
+    }
+
+    &__info {
+      align-items: flex-start;
+    }
+
+    &__title {
+      text-align: left;
+    }
+
+    &__text {
+      text-align: left;
+      width: 253px;
+    }
+  }
+}

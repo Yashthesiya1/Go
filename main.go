@@ -1,34 +1,20 @@
 package main
 
-import "fmt"
-
-var name string
-
-//var age int = 22
-
-//var array = [...]string{"Yash", "Krish", "Ravi", "Jaydeep", "Test"}
+import (
+	"html/template"
+	"log"
+	"myFristapp/handlers"
+	"net/http"
+)
 
 func main() {
-	// Example 1: Print simple message
 
-	fmt.Println("Enter your name ")
-	fmt.Scan(&name)
+	handlers.Templates = template.Must(template.ParseGlob("templates/*.html"))
 
-	fmt.Println("Your name is = ", name)
-	// Example 2: Print formatted string using variables
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	// fmt.Printf("My name is %s and my age is %d", name, age)
+	http.HandleFunc("/", handlers.ReviewHandler)
 
-	// Example 3: Print star pattern using nested loops
-
-	// for i := 0; i <= 5; i++ {
-	// 	for j := 0; j < i; j++ {
-	// 		fmt.Print("*")
-	// 	}
-	// 	fmt.Println()
-	// }
-
-	// for i := 0; i < len(array); i++ {
-	// 	fmt.Println("Name =", array[i])
-	// }
+	log.Println("Server started on http://localhost:8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
