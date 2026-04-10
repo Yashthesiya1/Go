@@ -14,7 +14,8 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	http.HandleFunc("/", handlers.ReviewHandler)
-
+	http.HandleFunc("/accepted", handlers.AcceptedHandle)
+	http.HandleFunc("/denied", handlers.DeniedHandle)
 	log.Println("Server started on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

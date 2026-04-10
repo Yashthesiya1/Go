@@ -23,8 +23,8 @@
     <div class="review-card">
       <div class="review-left">
         <div class="profile">
-          <img src="/static/images/profile.png" alt="Arif Momin" class="profile__photo">
-          <h2 class="profile__name">Arif Momin</h2>
+          <img src={{.Profile}} alt="Arif Momin" class="profile__photo">
+          <h2 class="profile__name">{{.Name}}</h2>
           <p class="profile__subtitle">would like you to confirm:</p>
         </div>
 
@@ -35,7 +35,7 @@
           </div>
           <div class="amount__value">
             <span class="currency">$</span>
-            <span class="number">60</span>
+            <span class="number">{{.Amount}}</span>
             <span class="cents">,00</span>
           </div>
           <span class="amount__type">In Goods</span>
